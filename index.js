@@ -13,6 +13,10 @@ const db   = process.env.MONGODB_URI || 'mongodb://localhost/hellodb';
 const app = express();
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Hello world');
+});
+
 // conexion a la base de datos
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
